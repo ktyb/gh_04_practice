@@ -15,9 +15,12 @@ jobs:
       
       - name: Test the code
         run: npm test
+
+      - name: Build the code
+        run: npm build
       
       - name: Deploy the code
-        run: npm run preview
+        run: echo "Deploying the code...""
 #  test:
 #    runs-on: ubuntu-latest
 #    steps:
