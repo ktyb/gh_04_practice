@@ -11,13 +11,13 @@ jobs:
         run: npm install --only=dev
 
       - name: Lint the code
-        run: npm run-script lint
+        run: npm run lint
       
       - name: Test the code
         run: npm test
       
       - name: Deploy the code
-        run: npm preview
+        run: npm run preview
 #  test:
 #    runs-on: ubuntu-latest
 #    steps:
