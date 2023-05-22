@@ -20,7 +20,7 @@ jobs:
         run: npm run build
       
       - name: Deploy the code
-        run: echo "Deploying the code...""
+        run: echo "Deploying the code..."
 #  test:
 #    runs-on: ubuntu-latest
 #    steps:
