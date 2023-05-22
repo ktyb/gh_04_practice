@@ -1,0 +1,30 @@
+name: Lint, test & deploy on push
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dev-dependencies
+        run: npm install --only=dev
+
+      - name: Lint the code
+        run: npm run-script lint
+      
+      - name: Test the code
+        run: npm test
+      
+      - name: Deploy the code
+        run: npm preview
+#  test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Test the code
+#        run: npm install --only=dev
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Deploy the code
+#        run:
