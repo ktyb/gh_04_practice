@@ -13,21 +13,17 @@ jobs:
       - name: Lint the code
         run: npm run lint
       
-      - name: Test the code
-        run: npm run test
-
       - name: Build the code
         run: npm run build
-      
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the code
+        run: npm run test
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy the code
         run: echo "Deploying the code..."
-#  test:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Test the code
-#        run: npm install --only=dev
-#  deploy:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Deploy the code
-#        run:
